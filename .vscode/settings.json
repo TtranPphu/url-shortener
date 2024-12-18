@@ -1,0 +1,12 @@
+{
+    "editor.autoIndent": "advanced",
+    "files.associations": {
+        "*.json": "jsonc",
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.rulers": [
+            88
+        ]
+    }
+}

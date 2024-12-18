@@ -1,0 +1,12 @@
+ipykernel
+nbconvert
+
+django
+djangorestframework
+
+pandas
+matplotlib
+openpyxl
+
+colorama
+tqdm
