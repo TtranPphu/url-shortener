@@ -4,43 +4,11 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Run (Python)",
+            "label": "Migrate",
             "type": "shell",
-            "command": "python3 main.py",
-            "options": {
-                "cwd": "${workspaceFolder}/python"
-            },
-            "problemMatcher": []
-        },
-        {
-            "label": "Test (Python)",
-            "group": "test",
-            "type": "shell",
-            "command": "python3 test.py -v",
-            "options": {
-                "cwd": "${workspaceFolder}/python"
-            },
+            "command": "python3 manage.py migrate",
             "problemMatcher": []
         }
     ],
-    "inputs": [
-        {
-            "id": "py_run_file",
-            "description": "Pick a file to run",
-            "type": "pickString",
-            "options": [
-                "main.py"
-            ],
-            "default": "main.py",
-        },
-        {
-            "id": "py_test_file",
-            "description": "Pick a file to test",
-            "type": "pickString",
-            "options": [
-                "test.py"
-            ],
-            "default": "test.py",
-        }
-    ]
+    "inputs": []
 }

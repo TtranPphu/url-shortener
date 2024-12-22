@@ -3,10 +3,6 @@ nbconvert
 
 django
 djangorestframework
-
-pandas
-matplotlib
-openpyxl
-
-colorama
-tqdm
+djangorestframework-simplejwt
+dj-rest-auth
+drf-yasg

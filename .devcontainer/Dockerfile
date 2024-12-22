@@ -1,6 +1,6 @@
 FROM ubuntu:22.04
 
-RUN apt update && apt upgrade -y && apt install sudo zsh git vim zip wget curl python3-pip bpytop -y
+RUN apt update && apt upgrade -y && apt install sudo zsh git vim zip wget curl python3-pip sqlite3 bpytop -y
 
 # Powerlevel10k
 RUN mkdir /usr/share/fonts/truetype/meslo

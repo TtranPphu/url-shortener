@@ -17,8 +17,8 @@ def home(request: Request):
 
 
 @api_view(["GET"])
-def auto_redirect(request: Request, shortened_url: str):
-    shorten_response = Shortened.objects.filter(shortCode__exact=shortened_url).first()
+def auto_redirect(request: Request, short_code: str):
+    shorten_response = Shortened.objects.filter(shortCode__exact=short_code).first()
     if shorten_response:
         return redirect(shorten_response.url)
     else:
@@ -26,7 +26,7 @@ def auto_redirect(request: Request, shortened_url: str):
 
 
 @api_view(["POST"])
-def set_shorten(request: Request):
+def shorten_create(request: Request):
     request_serializer = ShortenRequestSerializer(data=request.data)
     if request_serializer.is_valid():
         shorten_response = Shortened.objects.filter(
@@ -51,8 +51,8 @@ def set_shorten(request: Request):
 
 
 @api_view(["GET", "PUT", "DELETE"])
-def shorten(request: Request, shortened_url: str):
-    shorten_response = Shortened.objects.filter(shortCode__exact=shortened_url).first()
+def shorten(request: Request, short_code: str):
+    shorten_response = Shortened.objects.filter(shortCode__exact=short_code).first()
     if shorten_response:
         if request.method == "GET":
             return Response(ShortenedSerializer(shorten_response).data)

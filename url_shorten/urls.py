@@ -17,8 +17,16 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
+from dj_rest_auth.views import LoginView
+from .swagger import schema_view
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("login/", LoginView.as_view(), name="login"),
     path("", include("app.urls")),
+    path(
+        "swagger/",
+        schema_view.with_ui("swagger", cache_timeout=0),
+        name="schema-swagger-ui",
+    ),
 ]
